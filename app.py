@@ -5,12 +5,13 @@ from torchvision import transforms
 from PIL import Image
 import numpy as np
 
+st.write('Flower Classification CNN Model')
 st.header('Flower Classification CNN Model')
 classes = ['Black capped conure', 'Blue Cinnamon Greencheek', 'Blue Normal Greencheek', 'Blue Pineapple Greencheek', 'Blue Yellow sided Greencheek', 'Cinnamon Greencheek', 'Crimson bellird counre', 'Normal Greencheek', 'Pineapple Greencheek', 'Sun conure', 'Yellow sided Greencheek']
 
 # Load PyTorch model
 model = torch.load('modelNomal_100.pt', map_location=torch.device('cpu'))
-eval(model) # Set the model to evaluation mode
+model.eval() # Set the model to evaluation mode
 
 # Image preprocessing function (for PyTorch)
 def classify_images(image_path):
